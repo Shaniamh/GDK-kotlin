@@ -14,7 +14,7 @@ import org.jetbrains.anko.*
 /**
  * Created by X441U on 10/27/2018.
  */
-class Club_detail : AppCompatActivity() {
+class ClubDetail : AppCompatActivity() {
 
     var name = ""
     var img  = 0
@@ -28,36 +28,37 @@ class Club_detail : AppCompatActivity() {
 
         verticalLayout {
             imageClub = imageView(R.drawable.img_barca)
-                    .lparams(width = 310, height = 310) {
+                    .lparams(width = 250, height = 250) {
+                        gravity = Gravity.CENTER_HORIZONTAL
                         margin  = dip(13)
                         padding = dip(20)
                     }
 
             textName          = textView(){
-                text          = "Barcelona FC"
+                text          = "Lalala FC"
                 typeface      = Typeface.DEFAULT_BOLD
-                textAlignment = View.TEXT_ALIGNMENT_CENTER
                 textSize      = 20f
             }.lparams{
                 topMargin = dip (6)
-                width  = wrapContent
-                height = wrapContent
+                width     = wrapContent
+                height    = wrapContent
+                gravity   = Gravity.CENTER_HORIZONTAL
             }
 
             textDesc     = textView(){
                 text     = "Description"
                 textSize = 15f
             }.lparams{
-                width  = wrapContent
-                height = wrapContent
+                width     = wrapContent
+                height    = wrapContent
                 topMargin = dip(6)
             }
         }
 
         val intent    = intent
-        name          = intent.getStringExtra("name")
-        img           = intent.getIntExtra("image", 0)
-        desc          = intent.getStringExtra("desc")
+        name          = intent.getStringExtra("ClubName")
+        img           = intent.getIntExtra("ClubImage", 0)
+        desc          = intent.getStringExtra("ClubDesc")
         textName.text = name
         textDesc.text = desc
         Glide.with(applicationContext)

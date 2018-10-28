@@ -17,11 +17,11 @@ class MainActivity : AppCompatActivity() {
 
             recyclerView {
                 layoutManager = LinearLayoutManager(ctx)
-                adapter = Club_Adapter(ctx, items) {
-                    startActivity<Club_detail>(
-                            "name" to it.name,
-                            "image" to it.image,
-                            "desc" to it.desc)
+                adapter = ClubRecyclerViewAdapter(ctx, items) {
+                    startActivity<ClubDetail>(
+                            "ClubName" to "${it.name}",
+                            "ClubImage" to it.image,
+                            "ClubDesc" to "${it.desc}")
                 }
             }
     }
